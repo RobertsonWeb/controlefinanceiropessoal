@@ -1,7 +1,10 @@
 {% extends 'core/base.html' %}
+{% load bootstrap3 %}
 
 {% block title %}Título{% endblock %}
 
 {% block content %}
-Teste
+Teste asdfasdf
+{% bootstrap_icon "time" %}
+{% bootstrap_alert "Parabéns" alert_type='success' %}
 {% endblock %}
