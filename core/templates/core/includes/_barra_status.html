@@ -1,0 +1,18 @@
+{% load bootstrap3 %}
+{% block navbar_bottom %}
+<footer>
+  <nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+      <div class="navbar-header">
+        <br>
+        <span class="label label-info">{% bootstrap_icon 'user' %}</span>
+        <span class="label label-default">{{ user.get_short_name|upper }}</span>
+        <span class="label label-info">{% bootstrap_icon 'credit-card' %}</span>
+        <span class="label label-default">{{ user.get_tipo_display }}</span>
+        <span class="label label-info">{% bootstrap_icon 'bookmark' %}</span>
+        <span class="label label-default">Controle financeiro pessoal</span>
+      </div>
+    </div>
+  </nav>
+</footer>
+{% endblock %}

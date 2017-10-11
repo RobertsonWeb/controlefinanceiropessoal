@@ -1,0 +1,32 @@
+{% extends "registration/base.html" %}
+
+{% load bootstrap3 %}
+{% load staticfiles %}
+
+{% block title %}Sistema financeiro pessoal / Login{% endblock %}
+
+{% block content %}
+    <p></p>
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <h1 class="text-center login-title"><span class="glyphicon glyphicon-usd" style="font-size:100px;"></span></h1>
+            <center>
+              <h3>Sistema financeiro pessoal</h3>
+              <br><br>
+            </center>
+            <div class="account-wall">
+                <form class="form-signin" method="POST">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <span class="clearfix"></span>
+                <p style="text-align:center;">
+                  <button type="submit" class="btn btn-primary btn-small">
+                    {% bootstrap_icon 'glyphicon glyphicon-off' %} Entrar
+                  </button>
+                </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

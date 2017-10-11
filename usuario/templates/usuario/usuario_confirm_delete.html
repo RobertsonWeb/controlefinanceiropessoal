@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+{% load bootstrap3 %}
+
+{% block title %}
+  Confirmação de exclusão
+{% endblock %}
+
+{% block content %}
+<form action="" method="post">
+  {% csrf_token %}
+  <p>Você tem certeza que deseja excluir "{{ object.nome }}"?</p>
+  {% buttons submit='Confirmar' %}
+    {% bootstrap_button content='Cancelar' href="javascript:history.go(-1);" button_type='link' button_class='btn btn-default' size='md' %}
+  {% endbuttons %}
+</form>
+{% endblock %}

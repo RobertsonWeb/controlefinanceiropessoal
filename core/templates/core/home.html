@@ -5,6 +5,11 @@
 
 {% block content %}
 Teste asdfasdf
+
+{% if user.is_authenticated %}
+	Voce esta autenticado
+{% endif %}
+
 {% bootstrap_icon "time" %}
 {% bootstrap_alert "Parabéns" alert_type='success' %}
 {% endblock %}
