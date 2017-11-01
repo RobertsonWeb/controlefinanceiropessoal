@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+{% load bootstrap3 %}
+
+{% block title %}
+	{% bootstrap_icon 'user' %} Categorias
+{% endblock %}
+
+{% block content %}
+	<div class="panel panel-default">
+	  <div class="panel-body">
+	    <a href="{% url 'categoria_create' %}" class="btn btn-md btn-primary">{% bootstrap_icon 'floppy-disk' %} Cadastrar categoria</a>
+	  </div>
+	</div>
+	<table class="table table-hover">
+  		<thead>
+  			<th>Descriçao</th>
+  			<th>Tipo</th>
+  			<th>Situação</th>
+  			<th class="text-center">Editar</th>
+  		</thead>
+  		<tbody>
+  			{% for categoria in object_list %}
+				<tr>
+					<td>{{ categoria.descricao }}</td>
+					<td>{{ categoria.get_tipo_display }}</td>
+					<td>
+						{% if categoria.is_active %}
+							Ativa 
+							{% bootstrap_icon 'thumbs-up'%}
+						{% else %}
+							Inativa 
+							{% bootstrap_icon 'thumbs-down' %}
+						{% endif %}
+					</td>
+					<td class="text-center">
+				          {% bootstrap_button content='' href=categoria.get_absolute_url button_type='link' icon='edit' button_class='btn btn-primary' size='sm' %}
+				    </td>
+				</tr>
+			{% endfor %}
+  		</tbody>
+	</table>
+{% endblock %}
