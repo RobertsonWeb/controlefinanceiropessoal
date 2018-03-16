@@ -1,0 +1,8 @@
+Funcionalidades:
+Usuários
+Conta
+Categorias de lançamento (subcategorias)
+Lançamentos de entrada/saída (dia, valor, detalhe, categoria)
+
+Interfaces:
+Bootstrap
